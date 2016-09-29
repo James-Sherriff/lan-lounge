@@ -20,12 +20,11 @@ class WelcomeController < ApplicationController
     @calendar = service.get_calendar(calendar_id)
 		
 		channel = Google::Apis::CalendarV3::Channel.new(address: "https://lan-lounge.herokuapp.com/calendar_change",id: "lan-lounge-channel", type: "web_hook")
-		if(!webhook.nil?) then
-			webhook = service.watch_event('primary', channel, single_events: true, time_min: Time.now.iso8601)
-		end
+		webhook = service.watch_event('primary', channel, single_events: true, time_min: Time.now.iso8601)
   end
   
   def calendar_change
     puts "Recieved calendar change"
+		puts params
   end
 end
