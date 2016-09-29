@@ -65,7 +65,7 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Set the url options for the mailer
-  config.action_mailer.default_url_options = {host: 'https://lan-lounge.herokuapp.com/', port: 3000}
+  config.action_mailer.default_url_options = {host: 'https://lan-lounge.herokuapp.com/', port: 25}
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
