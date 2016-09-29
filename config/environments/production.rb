@@ -70,7 +70,7 @@ Rails.application.configure do
 	ActionMailer::base.smtp_settings = {
   	address:              'smtp.mailgun.org',
   	port:                 587,
-		domain:               'lan-lounge.herokuapp.com'
+		domain:               'lan-lounge.herokuapp.com',
 		user_name:            ENV['username'],
   	password:             ENV['password'],
   	authentication:       'plain'  }
