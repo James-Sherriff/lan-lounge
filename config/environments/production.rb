@@ -67,7 +67,7 @@ Rails.application.configure do
   # Set the url options for the mailer
   config.action_mailer.default_url_options = {host: 'lan-lounge.herokuapp.com'}
 	config.action_mailer.delivery_method = :smtp
-	ActionMailer::base.smtp_settings = {
+	config.action_mailer.smtp_settings = {
   	address:              'smtp.mailgun.org',
   	port:                 587,
 		domain:               'lan-lounge.herokuapp.com',
