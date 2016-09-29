@@ -65,7 +65,7 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Set the url options for the mailer
-  config.action_mailer.default_url_options = {host: 'localhost', port: 25}
+  config.action_mailer.default_url_options = {host: 'lan-lounge.herokuapp.com'}
 	config.action_mailer.delivery_method = :smtp
 	config.action_mailer.smtp_settings = {
   	address:              'smtp.gmail.com',
