@@ -24,7 +24,6 @@ class WelcomeController < ApplicationController
   end
   
   def calendar_change
-    puts "Recieved calendar change"
-		puts params
+    UserMailer.calendar_change_email(@params).deliver_later
   end
 end
