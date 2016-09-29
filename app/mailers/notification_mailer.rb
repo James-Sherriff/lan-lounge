@@ -1,5 +1,5 @@
 class NotificationMailer < ApplicationMailer
-	default from: "from@example.com"
+	default from: "postmaster@sandbox2bce1d2550dd4a858452a68a5269f473.mailgun.org"
 	
 	def calendar_change_email(params)
 		@params = params
