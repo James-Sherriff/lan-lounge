@@ -1,0 +1,8 @@
+<% if current_user.nil? then %>
+<%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
+<% else %>
+<%= current_user.name %>
+<%= current_user.access_token %>
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<%= link_to "View calendar", view_calendar_path %>
+<% end %>

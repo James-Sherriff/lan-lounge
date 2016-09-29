@@ -1,0 +1,5 @@
+<% @response.items.each do |event| %>
+  <% start = event.start.date_time %>
+  <%= event.summary %>
+  <% start %>
+<% end %>
