@@ -1,5 +1,7 @@
 class WelcomeController < ApplicationController
   require 'google/apis/calendar_v3'
+	require 'uri'
+	require 'net/http'
   def index
     auth = request.env['omniauth.auth']
   end
@@ -16,14 +18,11 @@ class WelcomeController < ApplicationController
                                order_by: 'startTime',
                                time_min: Time.now.iso8601)
     @calendar = service.get_calendar(calendar_id)
-		uri = URI.parse("https://www.googleapis.com/calendar/v3/calendars/primary/events/watch")
-		params = {'id' => 'lan-lounge-watch', 'address'=>'https://lan-lounge.herokuapp.com/calendar_change'}
-		headers = {'authorization' => current_user.access_token}
-
-		http = Net::HTTP.new(uri.host, uri.port)
-		response = http.post(uri.path, params.to_json, headers)
-		output = response.body
-		puts output
+		
+		channel = Google::Apis::CalendarV3::Channel.new(address: "https://lan-lounge.herokuapp.com/calendar_change",id: "lan-lounge-channel", type: "web_hook")
+		if(!webhook.nil?) then
+			webhook = service.watch_event('primary', channel, single_events: true, time_min: Time.now.iso8601)
+		end
   end
   
   def calendar_change
