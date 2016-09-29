@@ -24,6 +24,6 @@ class WelcomeController < ApplicationController
   end
   
   def calendar_change
-    UserMailer.calendar_change_email(@params).deliver_later
+    NotificationMailer.calendar_change_email(@params).deliver_later
   end
 end
