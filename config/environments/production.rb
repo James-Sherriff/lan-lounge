@@ -68,10 +68,10 @@ Rails.application.configure do
   config.action_mailer.default_url_options = {host: 'lan-lounge.herokuapp.com'}
 	config.action_mailer.delivery_method = :smtp
 	config.action_mailer.smtp_settings = {
-  	address:              'smtp.gmail.com',
+  	address:              'smtp.mailgun.org',
   	port:                 587,
-		user_name:            'jamessherriff158@gmail.com',
-  	password:             'Superl00p',
+		user_name:            ENV['username'],
+  	password:             ENV['password'],
   	authentication:       'plain',
   	enable_starttls_auto: true  }
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
