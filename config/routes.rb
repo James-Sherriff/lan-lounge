@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
   root 'welcome#index'
   get '/view_calendar', to: 'welcome#view_calendar'
-  get '/calendar_change', to: 'welcome#calendar_change'
+  post '/calendar_change', to: 'welcome#calendar_change'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
