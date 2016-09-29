@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#Use PostgreSQL for production DB
+gem 'pg'
 #Use the google api client
 gem 'google-api-client'
 # Use Omniauth for auth
@@ -8,8 +10,6 @@ gem 'omniauth-google-oauth2'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
