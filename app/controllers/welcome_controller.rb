@@ -24,7 +24,7 @@ class WelcomeController < ApplicationController
   end
   
   def calendar_change
-		logger.debug "Calendar Change"
+		logger.fatal "Calendar Change"
     NotificationMailer.calendar_change_email(@params).deliver_later
   end
 end
