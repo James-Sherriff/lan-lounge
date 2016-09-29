@@ -15,6 +15,18 @@ class WelcomeController < ApplicationController
                                single_events: true,
                                order_by: 'startTime',
                                time_min: Time.now.iso8601)
+    @calendar = service.get_calendar(calendar_id)
+		uri = URI.parse("https://www.googleapis.com/calendar/v3/calendars/primary/events/watch")
+		params = {'id' => 'lan-lounge-watch', 'address'=>'https://lan-lounge.herokuapp.com/calendar_change'}
+		headers = {'authorization' => current_user.access_token}
+
+		http = Net::HTTP.new(uri.host, uri.port)
+		response = http.post(uri.path, params.to_json, headers)
+		output = response.body
+		puts output
   end
   
+  def calendar_change
+    puts "Recieved calendar change"
+  end
 end

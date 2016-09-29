@@ -1,4 +1,4 @@
-default: &default
+db:default: &default
   database: default
   adapter: postgresql
   host: localhost
