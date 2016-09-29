@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-#Use mailgun for email sending
-gem 'mailgun_rails'
 #Use rails_12factor to debug on Heroku
 gem 'rails_12factor'
 #Use PostgreSQL for production DB
