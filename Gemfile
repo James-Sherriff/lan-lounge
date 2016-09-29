@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#Use rails_12factor to debug on Heroku
+gem 'rails_12factor'
 #Use PostgreSQL for production DB
 gem 'pg'
 #Use the google api client
