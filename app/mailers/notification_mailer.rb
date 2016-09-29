@@ -1,5 +1,5 @@
 class NotificationMailer < ApplicationMailer
-	
+	require 'mailgun'
 	def calendar_change_email(params)
 		@params = params
     mg_client = Mailgun::Client.new ENV['action_gun_key']
